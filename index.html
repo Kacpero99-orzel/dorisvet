@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DorisVet — Gabinet Weterynaryjny | Tworkowa & Iwkowa</title>
+<meta name="description" content="Gabinet Weterynaryjny DorisVet — profesjonalna opieka weterynaryjna w Tworkowej i Iwkowej. Wysoka ocena 4,9★. Zapraszamy!">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafaf8;
+  --white:#ffffff;
+  --black:#1a1a1a;
+  --dark:#2c2c2c;
+  --gold:#b8975a;
+  --gold-light:#f5ede0;
+  --gold-xlight:#fdf8f2;
+  --text:#2c2c2c;
+  --muted:#888880;
+  --border:#e8e4dc;
+  --shadow:0 4px 24px rgba(28,28,28,.06);
+  --shadow-lg:0 20px 60px rgba(28,28,28,.1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Jost',sans-serif;font-size:16px;line-height:1.7;overflow-x:hidden;padding-bottom:60px}
+
+/* TOPBAR */
+.topbar{background:var(--black);padding:10px 0;font-size:13px;color:rgba(255,255,255,.55)}
+.topbar-inner{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.topbar a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .2s;display:inline-flex;align-items:center;gap:6px}
+.topbar a:hover{color:var(--gold)}
+.topbar-right{display:flex;gap:28px}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;box-shadow:0 1px 20px rgba(28,28,28,.05)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:80px}
+.logo{display:flex;align-items:center;gap:16px;text-decoration:none}
+.logo-img{height:56px;width:56px;object-fit:contain;mix-blend-mode:multiply}
+.logo-text{display:flex;flex-direction:column;line-height:1.1}
+.logo-main{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--black);letter-spacing:.02em}
+.logo-sub{font-size:11px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-top:2px;font-weight:400}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:13px;font-weight:500;padding:8px 16px;transition:all .2s;letter-spacing:.05em;text-transform:uppercase}
+.nav-links a:hover{color:var(--black)}
+.nav-cta{background:var(--black)!important;color:#fff!important;font-weight:500!important;padding:10px 22px!important;letter-spacing:.08em}
+.nav-cta:hover{background:var(--dark)!important}
+
+/* HERO */
+.hero{background:var(--white);padding:100px 32px;position:relative;overflow:hidden;border-bottom:1px solid var(--border)}
+.hero-decor{position:absolute;top:0;right:0;width:50%;height:100%;background:var(--gold-xlight);clip-path:polygon(15% 0,100% 0,100% 100%,0% 100%);z-index:0}
+.hero-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;position:relative;z-index:2}
+.hero-eyebrow{font-size:11px;font-weight:500;color:var(--gold);letter-spacing:.25em;text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(44px,5vw,72px);font-weight:500;color:var(--black);line-height:1.05;letter-spacing:-.02em;margin-bottom:24px}
+.hero h1 em{font-style:italic;color:var(--gold)}
+.hero-desc{font-size:16px;color:var(--muted);font-weight:300;line-height:1.9;margin-bottom:40px;max-width:440px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+.btn-dark{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:#fff;font-weight:500;font-size:13px;padding:14px 32px;text-decoration:none;transition:all .25s;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;font-family:'Jost',sans-serif}
+.btn-dark:hover{background:var(--dark);transform:translateY(-2px);box-shadow:0 12px 30px rgba(28,28,28,.2)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--black);font-weight:500;font-size:13px;padding:13px 32px;border:1px solid var(--border);text-decoration:none;transition:all .25s;letter-spacing:.08em;text-transform:uppercase}
+.btn-outline:hover{border-color:var(--black)}
+
+/* HERO RIGHT */
+.hero-right{display:flex;flex-direction:column;gap:16px}
+.rating-card{background:var(--white);border:1px solid var(--border);padding:28px 32px;display:flex;align-items:center;gap:20px;box-shadow:var(--shadow)}
+.rating-stars{font-size:20px;color:#f5a623;letter-spacing:2px}
+.rating-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:600;color:var(--black);line-height:1}
+.rating-label{font-size:13px;color:var(--muted);margin-top:4px;letter-spacing:.05em}
+.hero-badges{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.hero-badge-item{background:var(--gold-xlight);border:1px solid rgba(184,151,90,.2);padding:18px 20px;text-align:center}
+.hero-badge-item .hb-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--gold);line-height:1}
+.hero-badge-item .hb-label{font-size:11px;color:var(--muted);margin-top:4px;letter-spacing:.08em;text-transform:uppercase}
+
+/* DIVIDER */
+.divider{height:1px;background:var(--border);margin:0}
+
+/* SECTIONS */
+.section{padding:80px 32px;max-width:1100px;margin:0 auto}
+.section-eyebrow{font-size:11px;font-weight:500;color:var(--gold);letter-spacing:.25em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:12px}
+.section-eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,48px);font-weight:500;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
+.section-title em{font-style:italic;color:var(--gold)}
+.section-sub{font-size:16px;color:var(--muted);font-weight:300;max-width:520px;margin-bottom:52px;line-height:1.8}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border)}
+.svc{background:var(--white);padding:36px 30px;transition:all .3s;cursor:default;position:relative}
+.svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+.svc:hover{background:var(--gold-xlight)}
+.svc:hover::after{transform:scaleX(1)}
+.svc-icon{font-size:32px;margin-bottom:16px;display:block}
+.svc h3{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;margin-bottom:10px;color:var(--black)}
+.svc p{font-size:14px;color:var(--muted);line-height:1.7}
+
+/* BRANCHES */
+.branches-section{background:var(--black);padding:80px 32px}
+.branches-inner{max-width:1100px;margin:0 auto}
+.branches-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,3.5vw,48px);font-weight:500;color:#fff;line-height:1.1;margin-bottom:52px}
+.branches-title em{font-style:italic;color:var(--gold)}
+.branches-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:rgba(255,255,255,.08)}
+.branch{background:var(--black);padding:48px 44px;border:1px solid rgba(255,255,255,.08);transition:all .3s}
+.branch:hover{background:#222;border-color:rgba(184,151,90,.3)}
+.branch-num{font-family:'Cormorant Garamond',serif;font-size:64px;font-weight:400;color:rgba(255,255,255,.06);line-height:1;margin-bottom:8px}
+.branch-name{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;color:#fff;margin-bottom:4px}
+.branch-name em{font-style:italic;color:var(--gold)}
+.branch-addr{font-size:14px;color:rgba(255,255,255,.4);margin-bottom:32px;letter-spacing:.03em}
+.branch-contact{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.bc-item{display:flex;align-items:center;gap:14px;text-decoration:none;color:rgba(255,255,255,.7);transition:color .2s}
+.bc-item:hover{color:var(--gold)}
+.bc-item .bc-icon{width:36px;height:36px;border:1px solid rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.bc-item .bc-val{font-size:15px;font-weight:500}
+.hours-title{font-size:11px;font-weight:500;color:rgba(255,255,255,.3);letter-spacing:.2em;text-transform:uppercase;margin-bottom:14px}
+.hours-list{display:flex;flex-direction:column;gap:0}
+.h-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+.h-row:last-child{border-bottom:none}
+.h-row .day{font-size:13px;color:rgba(255,255,255,.4)}
+.h-row .time{font-size:13px;font-weight:600;color:#fff}
+.h-row.closed .time{color:rgba(255,255,255,.2);font-weight:400}
+.branch-stars{display:flex;align-items:center;gap:8px;margin-top:28px;padding-top:24px;border-top:1px solid rgba(255,255,255,.08)}
+.branch-stars .stars{color:#f5a623;font-size:14px}
+.branch-stars .score{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:#fff}
+.branch-stars .count{font-size:12px;color:rgba(255,255,255,.3)}
+
+/* ABOUT */
+.about-section{padding:80px 32px;background:var(--gold-xlight);border-top:1px solid rgba(184,151,90,.15);border-bottom:1px solid rgba(184,151,90,.15)}
+.about-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-text p{font-size:16px;color:#5a5048;line-height:1.9;margin-bottom:16px}
+.about-text strong{color:var(--black)}
+.about-values{display:flex;flex-direction:column;gap:16px}
+.av-item{background:var(--white);border:1px solid rgba(184,151,90,.2);padding:24px 28px;display:flex;align-items:flex-start;gap:16px;transition:all .3s}
+.av-item:hover{border-color:var(--gold);transform:translateX(6px)}
+.av-icon{font-size:24px;flex-shrink:0;margin-top:2px}
+.av-item h4{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:var(--black);margin-bottom:4px}
+.av-item p{font-size:13px;color:var(--muted);line-height:1.6}
+
+/* CONTACT FORM */
+.contact-section{padding:80px 32px}
+.contact-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.contact-form{background:var(--white);border:1px solid var(--border);padding:48px 44px;box-shadow:var(--shadow)}
+.contact-form h3{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;margin-bottom:8px}
+.contact-form p{font-size:14px;color:var(--muted);margin-bottom:32px}
+.fg{display:flex;flex-direction:column;gap:6px;margin-bottom:18px}
+.fg label{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.15em}
+.fg input,.fg select,.fg textarea{background:var(--bg);border:1px solid var(--border);padding:13px 16px;font-family:'Jost',sans-serif;font-size:14px;color:var(--text);outline:none;width:100%;transition:border-color .2s}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold);background:#fff}
+.fg select option{background:#fff}
+.fg textarea{resize:vertical;min-height:100px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:0}
+.contact-info{display:flex;flex-direction:column;gap:16px;padding-top:8px}
+.ci-card{background:var(--white);border:1px solid var(--border);padding:24px 28px;display:flex;align-items:center;gap:18px;transition:all .25s;text-decoration:none;color:var(--text)}
+.ci-card:hover{border-color:var(--gold);box-shadow:var(--shadow);transform:translateX(4px)}
+.ci-icon{width:48px;height:48px;background:var(--gold-xlight);border:1px solid rgba(184,151,90,.2);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.ci-label{font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-bottom:4px}
+.ci-value{font-size:16px;font-weight:500;color:var(--black)}
+.map-wrap{border:1px solid var(--border);overflow:hidden;margin-top:4px}
+.map-wrap iframe{display:block;width:100%;height:200px;border:0;filter:sepia(20%) contrast(95%)}
+.map-footer{background:var(--white);padding:14px 20px;display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--text);transition:background .2s;border-top:1px solid var(--border)}
+.map-footer:hover{background:var(--gold-xlight)}
+
+/* FOOTER */
+footer{background:var(--black);padding:64px 32px 28px;color:rgba(255,255,255,.4)}
+.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:48px}
+.footer-brand{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;color:#fff;margin-bottom:16px;display:block;letter-spacing:.02em}
+.footer-brand em{font-style:italic;color:var(--gold)}
+.footer-col h4{font-size:11px;font-weight:500;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.2em;margin-bottom:16px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-col a{font-size:14px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{max-width:1100px;margin:0 auto;border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:12px}
+.footer-bottom a{color:rgba(255,255,255,.3);text-decoration:none}
+.footer-gold-line{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-bottom:64px}
+
+/* WATERMARK */
+.watermark{position:fixed;bottom:0;left:0;right:0;z-index:99999;background:rgba(26,26,26,.97);backdrop-filter:blur(8px);padding:12px 28px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;border-top:1px solid rgba(184,151,90,.3)}
+.wm-text{display:flex;align-items:center;gap:10px;color:#fff;font-size:13px;font-weight:400;letter-spacing:.03em}
+.wm-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:blink 2s ease-in-out infinite;flex-shrink:0}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+.wm-badge{background:transparent;color:var(--gold);font-size:12px;font-weight:500;padding:6px 16px;border:1px solid rgba(184,151,90,.4);letter-spacing:.15em;text-transform:uppercase}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-right{display:none}
+  .branches-grid{grid-template-columns:1fr}
+  .about-inner{grid-template-columns:1fr;gap:40px}
+  .contact-inner{grid-template-columns:1fr}
+  .footer-inner{grid-template-columns:1fr}
+  .services-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Gabinet Weterynaryjny DorisVet · Tworkowa & Iwkowa</span>
+    <div class="topbar-right">
+      <a href="tel:608395836">📞 608 395 836 — Tworkowa</a>
+      <a href="tel:697069616">📞 697 069 616 — Iwkowa</a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <img src="data:image/png;base64,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" alt="DorisVet" class="logo-img">
+      <div class="logo-text">
+        <span class="logo-main">DorisVet</span>
+        <span class="logo-sub">Gabinet Weterynaryjny</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#uslugi">Usługi</a></li>
+      <li><a href="#oddzialy">Oddziały</a></li>
+      <li><a href="#o-nas">O nas</a></li>
+      <li><a href="#kontakt">Kontakt</a></li>
+      <li><a href="tel:608395836" class="nav-cta">Umów wizytę</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-decor"></div>
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Tworkowa & Iwkowa</div>
+      <h1>Opieka weterynaryjna<br>z <em>troską i pasją</em></h1>
+      <p class="hero-desc">Gabinet Weterynaryjny DorisVet — profesjonalna i serdeczna opieka nad Twoim pupilem. Dwa oddziały w samym sercu regionu.</p>
+      <div class="hero-btns">
+        <a href="tel:608395836" class="btn-dark">Umów wizytę</a>
+        <a href="#uslugi" class="btn-outline">Nasze usługi →</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="rating-card">
+        <div>
+          <div class="rating-num">4,9</div>
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-label">56 opinii · Tworkowa</div>
+        </div>
+        <div style="width:1px;height:60px;background:var(--border);margin:0 8px;"></div>
+        <div>
+          <div class="rating-num">4,8</div>
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-label">40 opinii · Iwkowa</div>
+        </div>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge-item">
+          <div class="hb-num">2</div>
+          <div class="hb-label">Oddziały</div>
+        </div>
+        <div class="hero-badge-item">
+          <div class="hb-num">96</div>
+          <div class="hb-label">Opinii ★★★★★</div>
+        </div>
+        <div class="hero-badge-item">
+          <div class="hb-num">7+</div>
+          <div class="hb-label">Lat doświadczenia</div>
+        </div>
+        <div class="hero-badge-item">
+          <div class="hb-num">🐾</div>
+          <div class="hb-label">Z miłości do zwierząt</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section" id="uslugi">
+  <div class="section-eyebrow">Oferta</div>
+  <h2 class="section-title">Kompleksowa opieka<br>nad <em>Twoim pupilem</em></h2>
+  <p class="section-sub">Oferujemy pełen zakres usług weterynaryjnych — od profilaktyki po diagnostykę i zabiegi.</p>
+  <div class="services-grid">
+    <div class="svc"><span class="svc-icon">🩺</span><h3>Konsultacje i badania</h3><p>Kompleksowe badanie kliniczne, ocena stanu zdrowia i indywidualny plan leczenia dla każdego pacjenta.</p></div>
+    <div class="svc"><span class="svc-icon">💉</span><h3>Profilaktyka i szczepienia</h3><p>Szczepienia ochronne, odrobaczanie i ochrona przeciw pasożytom zewnętrznym i wewnętrznym.</p></div>
+    <div class="svc"><span class="svc-icon">🔬</span><h3>Diagnostyka laboratoryjna</h3><p>Morfologia, biochemia, badania moczu — szybkie wyniki pozwalające na precyzyjne rozpoznanie.</p></div>
+    <div class="svc"><span class="svc-icon">🏥</span><h3>Zabiegi chirurgiczne</h3><p>Sterylizacja, kastracja, usuwanie guzów i inne procedury chirurgiczne w pełnej narkozie.</p></div>
+    <div class="svc"><span class="svc-icon">🦷</span><h3>Stomatologia</h3><p>Czyszczenie zębów, usuwanie kamienia nazębnego i leczenie chorób przyzębia u zwierząt.</p></div>
+    <div class="svc"><span class="svc-icon">📋</span><h3>Paszporty i chipowanie</h3><p>Wystawianie paszportów, wszczepianie mikrochipów i dokumentacja do podróży zagranicznych.</p></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- BRANCHES -->
+<section class="branches-section" id="oddzialy">
+  <div class="branches-inner">
+    <div class="section-eyebrow" style="color:var(--gold)">Dwa oddziały</div>
+    <h2 class="branches-title">Znajdź nas <em>w swojej okolicy</em></h2>
+    <div class="branches-grid">
+
+      <!-- TWORKOWA -->
+      <div class="branch">
+        <div class="branch-num">01</div>
+        <div class="branch-name">DorisVet <em>Tworkowa</em></div>
+        <div class="branch-addr">Tworkowa, woj. małopolskie</div>
+        <div class="branch-contact">
+          <a href="tel:608395836" class="bc-item">
+            <div class="bc-icon">📞</div>
+            <span class="bc-val">608 395 836</span>
+          </a>
+        </div>
+        <div class="hours-title">Godziny otwarcia</div>
+        <div class="hours-list">
+          <div class="h-row closed"><span class="day">Poniedziałek</span><span class="time">Nieczynne</span></div>
+          <div class="h-row"><span class="day">Wtorek</span><span class="time">10:00 — 18:00</span></div>
+          <div class="h-row closed"><span class="day">Środa</span><span class="time">Nieczynne</span></div>
+          <div class="h-row"><span class="day">Czwartek</span><span class="time">10:00 — 18:00</span></div>
+          <div class="h-row"><span class="day">Piątek</span><span class="time">10:00 — 16:00</span></div>
+          <div class="h-row"><span class="day">Sobota</span><span class="time">10:00 — 13:00</span></div>
+          <div class="h-row closed"><span class="day">Niedziela</span><span class="time">Nieczynne</span></div>
+        </div>
+        <div class="branch-stars">
+          <span class="stars">★★★★★</span>
+          <span class="score">4,9</span>
+          <span class="count">· 56 opinii Google</span>
+        </div>
+      </div>
+
+      <!-- IWKOWA -->
+      <div class="branch">
+        <div class="branch-num">02</div>
+        <div class="branch-name">DorisVet <em>Iwkowa</em></div>
+        <div class="branch-addr">Iwkowa 400, woj. małopolskie</div>
+        <div class="branch-contact">
+          <a href="tel:697069616" class="bc-item">
+            <div class="bc-icon">📞</div>
+            <span class="bc-val">697 069 616</span>
+          </a>
+        </div>
+        <div class="hours-title">Godziny otwarcia</div>
+        <div class="hours-list">
+          <div class="h-row"><span class="day">Poniedziałek</span><span class="time">17:00 — 19:00</span></div>
+          <div class="h-row closed"><span class="day">Wtorek</span><span class="time">Nieczynne</span></div>
+          <div class="h-row"><span class="day">Środa</span><span class="time">17:00 — 19:00</span></div>
+          <div class="h-row closed"><span class="day">Czwartek</span><span class="time">Nieczynne</span></div>
+          <div class="h-row"><span class="day">Piątek</span><span class="time">17:00 — 19:00</span></div>
+          <div class="h-row closed"><span class="day">Sobota</span><span class="time">Nieczynne</span></div>
+          <div class="h-row closed"><span class="day">Niedziela</span><span class="time">Nieczynne</span></div>
+        </div>
+        <div class="branch-stars">
+          <span class="stars">★★★★★</span>
+          <span class="score">4,8</span>
+          <span class="count">· 40 opinii Google</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="o-nas">
+  <div class="about-inner">
+    <div>
+      <div class="section-eyebrow">O gabinecie</div>
+      <h2 class="section-title">Leczenie z <em>sercem</em><br>i wiedzą</h2>
+      <div class="about-text">
+        <p>Gabinet Weterynaryjny DorisVet to miejsce, gdzie każde zwierzę traktowane jest z najwyższą troską i szacunkiem. Od ponad 7 lat zapewniamy <strong>profesjonalną opiekę weterynaryjną</strong> mieszkańcom gminy Iwkowa i okolic.</p>
+        <p>Dwa oddziały — w Tworkowej i Iwkowej — to nasza odpowiedź na potrzeby lokalnej społeczności. Wierzymy, że <strong>dobra weterynaria powinna być blisko domu</strong>.</p>
+        <p>Wysoka ocena naszych klientów (4,9★ i 4,8★ w Google) to dla nas największa nagroda i zobowiązanie do ciągłego doskonalenia.</p>
+      </div>
+    </div>
+    <div class="about-values">
+      <div class="av-item"><span class="av-icon">🤝</span><div><h4>Indywidualne podejście</h4><p>Każdy pacjent jest inny — dostosowujemy leczenie do konkretnego zwierzęcia i jego potrzeb.</p></div></div>
+      <div class="av-item"><span class="av-icon">💛</span><div><h4>Pasja i zaangażowanie</h4><p>Weterynaria to dla nas powołanie, nie tylko zawód. Każde zwierzę zasługuje na najlepszą opiekę.</p></div></div>
+      <div class="av-item"><span class="av-icon">🏡</span><div><h4>Blisko Ciebie</h4><p>Dwa oddziały w Tworkowej i Iwkowej — profesjonalna pomoc weterynaryjna zawsze w pobliżu.</p></div></div>
+      <div class="av-item"><span class="av-icon">⭐</span><div><h4>Zaufanie klientów</h4><p>Ponad 96 pozytywnych opinii w Google — to najlepszy dowód jakości naszej pracy.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="kontakt" style="padding-bottom:0;">
+  <div class="section-eyebrow">Kontakt</div>
+  <h2 class="section-title">Umów <em>wizytę</em></h2>
+  <p class="section-sub">Zadzwoń lub wypełnij formularz — odpiszemy najszybciej jak to możliwe.</p>
+</section>
+
+<div class="contact-section" style="padding-top:0;">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <a href="tel:608395836" class="ci-card">
+        <div class="ci-icon">📞</div>
+        <div><div class="ci-label">Tworkowa</div><div class="ci-value">608 395 836</div></div>
+      </a>
+      <a href="tel:697069616" class="ci-card">
+        <div class="ci-icon">📞</div>
+        <div><div class="ci-label">Iwkowa</div><div class="ci-value">697 069 616</div></div>
+      </a>
+      <div class="ci-card">
+        <div class="ci-icon">🕐</div>
+        <div><div class="ci-label">Tworkowa — godziny</div><div class="ci-value">Wt, Czw 10–18 · Pt 10–16 · Sob 10–13</div></div>
+      </div>
+      <div class="ci-card">
+        <div class="ci-icon">🕐</div>
+        <div><div class="ci-label">Iwkowa — godziny</div><div class="ci-value">Pon, Śr, Pt 17–19</div></div>
+      </div>
+      <a href="https://www.google.com/maps/search/Tworkowa+weterynarz" target="_blank" class="map-wrap" style="text-decoration:none;display:block;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2563!2d20.55!3d49.85!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sTworkowa!5e0!3m2!1spl!2spl!4v1" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="map-footer">
+          <span style="font-size:16px;">📍</span>
+          <div><div style="font-size:13px;font-weight:500;">Tworkowa · Iwkowa 400</div><div style="font-size:12px;color:var(--muted);">Otwórz w Google Maps →</div></div>
+        </div>
+      </a>
+    </div>
+    <div class="contact-form">
+      <h3>Napisz do nas</h3>
+      <p>Odpiszemy najszybciej jak to możliwe.</p>
+      <div class="form-row">
+        <div class="fg"><label>Imię i nazwisko</label><input type="text" placeholder="Anna Kowalska"></div>
+        <div class="fg"><label>Telefon</label><input type="tel" placeholder="+48 000 000 000"></div>
+      </div>
+      <div class="fg">
+        <label>Oddział</label>
+        <select>
+          <option>Wybierz oddział...</option>
+          <option>DorisVet Tworkowa</option>
+          <option>DorisVet Iwkowa</option>
+        </select>
+      </div>
+      <div class="fg"><label>Zwierzę (gatunek, imię)</label><input type="text" placeholder="np. Pies, Max"></div>
+      <div class="fg"><label>Wiadomość</label><textarea placeholder="Opisz z czym chcesz się zgłosić..."></textarea></div>
+      <button class="btn-dark" style="width:100%;justify-content:center;" onclick="alert('Dziękujemy! Odezwiemy się wkrótce.')">Wyślij wiadomość</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer-gold-line"></div>
+<footer>
+  <div class="footer-inner">
+    <div>
+      <span class="footer-brand"><em>Doris</em>Vet</span>
+      <p style="font-size:14px;line-height:1.8;">Gabinet Weterynaryjny DorisVet — profesjonalna i serdeczna opieka weterynaryjna. Dwa oddziały w Tworkowej i Iwkowej.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Usługi</h4>
+      <ul>
+        <li><a href="#uslugi">Konsultacje</a></li>
+        <li><a href="#uslugi">Szczepienia</a></li>
+        <li><a href="#uslugi">Diagnostyka</a></li>
+        <li><a href="#uslugi">Chirurgia</a></li>
+        <li><a href="#uslugi">Chipowanie</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Kontakt</h4>
+      <ul>
+        <li><a href="tel:608395836">📞 608 395 836 — Tworkowa</a></li>
+        <li><a href="tel:697069616">📞 697 069 616 — Iwkowa</a></li>
+        <li><a href="#oddzialy">📍 Tworkowa</a></li>
+        <li><a href="#oddzialy">📍 Iwkowa 400</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 Gabinet Weterynaryjny DorisVet. Wszelkie prawa zastrzeżone.</span>
+    <a href="#">Polityka prywatności</a>
+  </div>
+</footer>
+
+<!-- WATERMARK -->
+<div class="watermark">
+  <div class="wm-text"><div class="wm-dot"></div>Wersja demonstracyjna — strona wykonana na zamówienie</div>
+  <span class="wm-badge">Demo</span>
+</div>
+
+</body>
+</html>
