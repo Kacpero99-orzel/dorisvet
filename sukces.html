@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wiadomość wysłana — DorisVet</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafaf8;
+  --white:#ffffff;
+  --black:#1a1a1a;
+  --dark:#2c2c2c;
+  --gold:#b8975a;
+  --gold-xlight:#fdf8f2;
+  --text:#2c2c2c;
+  --muted:#888880;
+  --border:#e8e4dc;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'Jost',sans-serif;min-height:100vh;display:flex;flex-direction:column}
+
+/* TOPBAR */
+.topbar{background:var(--black);padding:10px 0;font-size:13px;color:rgba(255,255,255,.55)}
+.topbar-inner{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;justify-content:space-between;align-items:center}
+.topbar a{color:rgba(255,255,255,.7);text-decoration:none}
+
+/* NAV */
+nav{background:var(--white);border-bottom:1px solid var(--border);box-shadow:0 1px 20px rgba(28,28,28,.05)}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;height:80px}
+.logo{display:flex;align-items:center;gap:16px;text-decoration:none}
+.logo-main{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;color:var(--black);letter-spacing:.02em}
+.logo-main em{font-style:italic;color:var(--gold)}
+.logo-sub{font-size:11px;color:var(--muted);letter-spacing:.2em;text-transform:uppercase;margin-top:2px}
+
+/* MAIN */
+main{flex:1;display:flex;align-items:center;justify-content:center;padding:80px 32px}
+.card{background:var(--white);border:1px solid var(--border);padding:72px 64px;max-width:560px;width:100%;text-align:center;box-shadow:0 4px 24px rgba(28,28,28,.06)}
+.check{width:64px;height:64px;background:var(--gold-xlight);border:1px solid rgba(184,151,90,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 32px;font-size:28px}
+.eyebrow{font-size:11px;font-weight:500;color:var(--gold);letter-spacing:.25em;text-transform:uppercase;margin-bottom:16px;display:flex;align-items:center;justify-content:center;gap:12px}
+.eyebrow::before{content:'';width:28px;height:1px;background:var(--gold)}
+.eyebrow::after{content:'';width:28px;height:1px;background:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:500;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px;color:var(--black)}
+h1 em{font-style:italic;color:var(--gold)}
+p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:40px;font-weight:300}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--black);color:#fff;font-weight:500;font-size:13px;padding:14px 32px;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;transition:all .25s}
+.btn:hover{background:var(--dark);transform:translateY(-2px);box-shadow:0 12px 30px rgba(28,28,28,.2)}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:24px 32px;text-align:center;font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Gabinet Weterynaryjny DorisVet</span>
+    <div style="display:flex;gap:24px">
+      <a href="tel:608395836">📞 608 395 836 — Tworkowa</a>
+      <a href="tel:697069616">📞 697 069 616 — Iwkowa</a>
+    </div>
+  </div>
+</div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/" class="logo">
+      <div>
+        <div class="logo-main"><em>Doris</em>Vet</div>
+        <div class="logo-sub">Gabinet Weterynaryjny</div>
+      </div>
+    </a>
+  </div>
+</nav>
+
+<main>
+  <div class="card">
+    <div class="check">✓</div>
+    <div class="eyebrow">Dziękujemy</div>
+    <h1>Wiadomość<br><em>wysłana</em></h1>
+    <p>Otrzymaliśmy Twoją wiadomość i odezwiemy się najszybciej jak to możliwe. Zazwyczaj odpowiadamy w ciągu kilku godzin w godzinach pracy gabinetu.</p>
+    <a href="/" class="btn">← Wróć na stronę główną</a>
+  </div>
+</main>
+
+<footer>
+  © 2026 Gabinet Weterynaryjny DorisVet — Tworkowa · Iwkowa
+</footer>
+
+</body>
+</html>
